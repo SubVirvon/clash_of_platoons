@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03216C6E-4C26-4C43-A892-A0F30D68E00D}</ProjectGuid>
+    <ProjectGuid>{6AE57F4D-CC42-46E0-97AA-219E075C5493}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>clash_of_platoons</RootNamespace>
-    <AssemblyName>clash of platoons</AssemblyName>
+    <RootNamespace>clash_of_platoons2</RootNamespace>
+    <AssemblyName>clash of platoons2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

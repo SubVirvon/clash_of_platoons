@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clash of platoons", "clash of platoons\clash of platoons.csproj", "{03216C6E-4C26-4C43-A892-A0F30D68E00D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clash of platoons2", "clash of platoons2\clash of platoons2.csproj", "{6AE57F4D-CC42-46E0-97AA-219E075C5493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{03216C6E-4C26-4C43-A892-A0F30D68E00D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03216C6E-4C26-4C43-A892-A0F30D68E00D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03216C6E-4C26-4C43-A892-A0F30D68E00D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03216C6E-4C26-4C43-A892-A0F30D68E00D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE57F4D-CC42-46E0-97AA-219E075C5493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE57F4D-CC42-46E0-97AA-219E075C5493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE57F4D-CC42-46E0-97AA-219E075C5493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE57F4D-CC42-46E0-97AA-219E075C5493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5FACE950-B76A-418F-AD77-5733B3D3632E}
+		SolutionGuid = {D18331C6-1776-4F6C-B96C-6E2C9F974CD5}
 	EndGlobalSection
 EndGlobal

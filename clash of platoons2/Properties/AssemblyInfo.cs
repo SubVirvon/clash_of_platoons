@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("clash of platoons")]
+[assembly: AssemblyTitle("clash of platoons2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("clash of platoons")]
+[assembly: AssemblyProduct("clash of platoons2")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("03216c6e-4c26-4c43-a892-a0f30d68e00d")]
+[assembly: Guid("6ae57f4d-cc42-46e0-97aa-219e075c5493")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

@@ -1,0 +1,8 @@
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\bin\Debug\clash of platoons2.exe.config
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\bin\Debug\clash of platoons2.exe
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\bin\Debug\clash of platoons2.pdb
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\obj\Debug\clash of platoons2.csproj.AssemblyReference.cache
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\obj\Debug\clash of platoons2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\obj\Debug\clash of platoons2.csproj.CoreCompileInputs.cache
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\obj\Debug\clash of platoons2.exe
+C:\Users\Danii\source\repos\clash of platoons2\clash of platoons2\obj\Debug\clash of platoons2.pdb
