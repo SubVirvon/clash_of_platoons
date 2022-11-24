@@ -38,22 +38,35 @@ namespace clash_of_platoons2
             
             while(isFinish == false)
             {
-                attackPlatoon.Attack(defendingPlatoon);
+                Attack(attackPlatoon, defendingPlatoon);
                 defendingPlatoon.RemoveDeadWarriors();
 
                 if (defendingPlatoon.IsNoWarriorsLeft())
                 {
                     winningPlatoon = attackPlatoon;
-                    break;
+                    isFinish = true;
                 }
-
-                Platoon value = attackPlatoon;
-                attackPlatoon = defendingPlatoon;
-                defendingPlatoon = value;
+                else
+                {
+                    Platoon value = attackPlatoon;
+                    attackPlatoon = defendingPlatoon;
+                    defendingPlatoon = value;
+                }
             }
 
             Console.WriteLine($"\nВзвод {winningPlatoon.Name} одержал победу!");
             Console.ReadKey();
+        }
+
+        public void Attack(Platoon attackplatoon, Platoon defendingPlatoon)
+        {
+            Warrior loyalWarrior = attackplatoon.GetWarrior();
+            Warrior enemyWarrior = defendingPlatoon.GetWarrior();
+
+            Console.WriteLine($"\nВзвод {attackplatoon.Name} атакует взвод {defendingPlatoon.Name}:");
+            Console.Write($"боец {loyalWarrior.Number}.{loyalWarrior.Name} стреляет по вражескому {enemyWarrior.Number}.{enemyWarrior.Name} ");
+
+            loyalWarrior.Shoot(enemyWarrior);
         }
 
         private Platoon CreatePlatoon(int warriorsCount, string name)
@@ -84,12 +97,12 @@ namespace clash_of_platoons2
                 int sniperHeal = _random.Next(minSniperHeal, maxSniperHeal + 1);
                 int sniperDamage = _random.Next(minSniperDamage, maxSniperDamage + 1);
                 string number = Convert.ToString(i + 1);
-                Warrior[] warriorVariants = new Warrior[2] { new Gunner(gunnerHeal, gunnerDamage, gunnerAccuracy, gunnerName, number, gunnerShotsCount), new Sniper(sniperHeal, sniperDamage, sniperAccuracy, sniperName, number, sniperCritChanse, sniperCritMultiplier) };
+                Warrior[] warriorVariants = new Warrior[2] { new Gunner(gunnerHeal, gunnerDamage, gunnerAccuracy, gunnerName, number, _random, gunnerShotsCount), new Sniper(sniperHeal, sniperDamage, sniperAccuracy, sniperName, number, _random, sniperCritChanse, sniperCritMultiplier) };
 
                 warriors.Add(warriorVariants[_random.Next(warriorVariants.Length)]);
             }
 
-            return new Platoon(warriors, name);
+            return new Platoon(warriors, name, _random);
         }
     }
 
@@ -99,22 +112,16 @@ namespace clash_of_platoons2
         private Random _random;
         public string Name { get; private set; }
 
-        public Platoon(List<Warrior> warriors, string name)
+        public Platoon(List<Warrior> warriors, string name, Random random)
         {
             _warriors = warriors;
-            _random = new Random();
+            _random = random;
             Name = name;
         }
 
-        public void Attack(Platoon enemyPlatoon)
+        public Warrior GetWarrior()
         {
-            Warrior loyalWarrior = _warriors[_random.Next(_warriors.Count - 1)];
-            Warrior enemyWarrior = enemyPlatoon._warriors[_random.Next(enemyPlatoon._warriors.Count)];
-
-            Console.WriteLine($"\nВзвод {Name} атакует взвод {enemyPlatoon.Name}:");
-            Console.Write($"боец {loyalWarrior.Number}.{loyalWarrior.Name} стреляет по вражескому {enemyWarrior.Number}.{enemyWarrior.Name} ");
-
-            loyalWarrior.Shoot(enemyWarrior);
+            return _warriors[_random.Next(_warriors.Count)];
         }
         
         public bool IsNoWarriorsLeft()
@@ -145,14 +152,14 @@ namespace clash_of_platoons2
         public string Number { get; private set; }
         public int Health { get; private set; }
 
-        public Warrior(int health, int damage, int accuracy, string name, string number)
+        public Warrior(int health, int damage, int accuracy, string name, string number, Random random)
         {
             Health = health;
             Damage = damage;
             Accuracy = accuracy;
             Name = name;
             Number = number;
-            Random = new Random();
+            Random = random;
         }
 
         public abstract void Shoot(Warrior enemyWarrior);
@@ -176,7 +183,7 @@ namespace clash_of_platoons2
     {
         private int _shotsCount;
 
-        public Gunner(int health, int damage, int accuracy, string name, string number, int shotsCount) : base (health, damage, accuracy, name, number)
+        public Gunner(int health, int damage, int accuracy, string name, string number, Random random, int shotsCount) : base (health, damage, accuracy, name, number, random)
         {
             _shotsCount = shotsCount;
         }
@@ -209,7 +216,7 @@ namespace clash_of_platoons2
         private int _critChance;
         private int _critMultiplier;
 
-        public Sniper(int health, int damage, int accuracy, string name, string number, int critChance, int critMultiplier) : base(health, damage, accuracy, name, number)
+        public Sniper(int health, int damage, int accuracy, string name, string number, Random random, int critChance, int critMultiplier) : base(health, damage, accuracy, name, number, random)
         {
             _critChance = critChance;
             _critMultiplier = critMultiplier;
